@@ -1,0 +1,112 @@
+/* CSS RESET */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+* {
+    margin: 0;
+}
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+input, button, textarea, select {
+    font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+/* PROJECT */
+body {
+    padding: 1rem 2.5rem;
+    min-height: 100vh;
+    min-width: fit-content;
+    font-family: sans-serif;
+    background-color: #173B45;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    gap: 2rem;
+}
+
+header {
+    position: relative;
+    text-align: center;
+    flex-grow: 1;
+}
+
+button {
+    appearance: none;
+    padding: 0.5rem 0.8rem;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.new-book-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.new-book-button button{
+    background-color: #FF8225;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 10px;
+}
+
+.books {
+    flex-grow: 4;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    grid-template-rows: 260px;
+    grid-auto-rows: 260px;
+    gap: 30px;
+}
+
+.remove-book {
+    position: absolute;
+    bottom: 0;
+}
+
+.remove-book button {
+    background-color: #B43F3F;
+    color: #fff;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.book {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    padding-top: 7px;
+    border: 2px solid #B43F3F;
+    border-radius: 3px;
+    border-left: 15px solid #B43F3F;
+    background-color: #F8EDED;
+    color: #173B45;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.book > div:first-child {
+    font-size: 1.3rem;
+}
+
+
