@@ -35,9 +35,12 @@ body {
 }
 
 header {
-    position: relative;
+    margin-bottom: 20px;
     text-align: center;
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 button {
@@ -46,7 +49,6 @@ button {
     border: 0;
     outline: none;
     cursor: pointer;
-    font: inherit;
     color: inherit;
 }
 
@@ -55,9 +57,8 @@ button:hover {
 }
 
 .new-book-button {
-    position: absolute;
-    bottom: 0;
-    right: 0;
+    margin-top: auto;
+    margin-left: auto;
 }
 
 .new-book-button button{
@@ -73,7 +74,8 @@ button:hover {
     grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
     grid-template-rows: 260px;
     grid-auto-rows: 260px;
-    gap: 30px;
+    column-gap: 30px;
+    row-gap: 40px;
 }
 
 .remove-book {
@@ -87,6 +89,7 @@ button:hover {
     border-radius: 10px;
     font-weight: bold;
     margin-bottom: 5px;
+    font-size: 0.9rem;
 }
 
 .book {
@@ -96,7 +99,7 @@ button:hover {
     align-items: center;
     gap: 7px;
     padding-top: 7px;
-    border: 2px solid #B43F3F;
+    border: 5px solid #B43F3F;
     border-radius: 3px;
     border-left: 15px solid #B43F3F;
     background-color: #F8EDED;
@@ -105,8 +108,97 @@ button:hover {
     font-size: 1rem;
 }
 
-.book > div:first-child {
-    font-size: 1.3rem;
+.book::before {
+    position: absolute;
+    width: 80px;
+    height: auto;
+    content: "not read";
+    top: 0;
+    right: 0;
+    color: white;
+    background-color: red;
+    text-align: center;
+    margin-top: -32px;
 }
 
+.book > div:first-child {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
 
+dialog {
+    padding: 30px;
+    margin: auto;
+    border-radius: 3px;
+    background-color: #F8EDED;
+    border: 3px solid #173B45;
+    color: #173B45;
+}
+
+dialog::backdrop {
+    background-image: linear-gradient(
+    45deg,
+    magenta,
+    rebeccapurple,
+    dodgerblue,
+    green
+  );
+  opacity: 0.75;
+}
+
+form {
+    padding-top: 10px;
+}
+
+form > *:not(:first-child) {
+    margin-top: 40px;
+}
+
+dialog label {
+    display: inline-block;
+    width: 140px;
+    font-weight: bold;
+}
+
+dialog input {
+    appearance: none;
+    outline: none;
+    border: 1px solid black;
+    display: inline-block;
+    /* width: 200px; */
+    width: 100%;
+}
+
+dialog p {
+    position: relative;
+}
+
+dialog p::after {
+    position: absolute;
+    content: "required";
+    top: -5;
+    right: 0;
+    padding: 3px 7px;
+    text-align: center;
+    width: 75px;
+    height: auto;
+    margin-top: -30px;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: #173B45;
+    color: white;
+}
+
+dialog button {
+    font-weight: bold;
+    color: #fff;
+}
+
+.cancel {
+    background-color: rgb(90, 87, 87);
+    margin-right: 10px;
+}
+
+.confirm {
+    background-color: darkcyan;
+}

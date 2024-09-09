@@ -14,19 +14,33 @@
         </div>
     </header>
     <div class="books">
-        <div class="book">
-            <div class="title">A title</div>
-            <div class="author">An author</div>
-            <div class="pages"><span class="num">13</span> pages</div>
-            <div class="is-read">
-                <input type="checkbox" name="is-book-read" id="is-book-read">
-                <label for="is-book-read">read book</label>
-                <div class="remove-book">
-                    <button type="button">Remove</button>
-                </div>
-            </div>
-        </div>
     </div>
+    <dialog>
+        <form>
+            <p>
+                <label for="book-title-input">
+                    Book Title:
+                </label>
+                <input type="text" id="book-title-input" required>
+            </p>
+            <p>
+                <label for="book-author-input">
+                    Book Author: 
+                </label>
+                <input type="text" id="book-author-input" required>
+            </p>
+            <p>
+                <label for="book-pages-input">
+                    Number of Pages:
+                </label>
+                <input type="number" id="book-pages-input" min="1" max="1000" required>
+            </p>
+            <div>
+                <button class="cancel" value="cancel" formnovalidate formmethod="dialog">Cancel</button>
+                <button class="confirm" value="confirm">Confirm</button>
+            </div>
+        </form>
+    </dialog>
     <script src="./script.js"></script>
 </body>
 </html>
