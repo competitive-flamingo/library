@@ -7,7 +7,7 @@ class Book {
         this.noPages = noPages;
     }
 
-    toggleBookRead() {
+    toggleReadBook() {
         this.isRead = !this.isRead;
     }
 }
