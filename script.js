@@ -1,12 +1,15 @@
-function Book(title, author, noPages) {
-    this.author = author;
-    this.title = title;
-    this.noPages = noPages;
-    this.isRead = false;
-}
+class Book {
+    isRead = false;
 
-Book.prototype.toggleReadBook = function() {
-    this.isRead = !this.isRead;
+    constructor(title, author, noPages) {
+        this.title = title;
+        this.author = author;
+        this.noPages = noPages;
+    }
+
+    toggleBookRead() {
+        this.isRead = !this.isRead;
+    }
 }
 
 const library = [];
